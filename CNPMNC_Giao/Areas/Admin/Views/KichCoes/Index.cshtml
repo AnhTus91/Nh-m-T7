@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CNPMNC_Giao.Models.KichCo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SoKichCo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SanPham.TenSanPham)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SanPham1.TenSanPham)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoKichCo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanPham.TenSanPham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanPham1.TenSanPham)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaKichCo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaKichCo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaKichCo })
+        </td>
+    </tr>
+}
+
+</table>

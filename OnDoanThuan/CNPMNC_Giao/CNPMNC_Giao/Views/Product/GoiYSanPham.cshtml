@@ -1,0 +1,51 @@
+﻿@model List<CNPMNC_Giao.Models.SanPham>
+
+<h2>Sản phẩm được nhiều người quan tâm</h2>
+
+<div class="popular-products">
+    @foreach (var product in Model)
+    {
+        <div class="product">
+            <img src="@product.AnhSP" alt="@product.TenSanPham" />
+            <h3>@product.TenSanPham</h3>
+            <p>Lượt xem: @product.SoLuotXem</p>
+            <p>@product.GiaTienMoi.ToString("C")</p>
+            <a href="/SanPham/ChiTiet/@product.MaSanPham" class="btn btn-primary">Xem chi tiết</a>
+        </div>
+    }
+</div><style>
+    .popular-products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .product {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 200px;
+        text-align: center;
+    }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product p {
+            color: #f30;
+        }
+
+    .btn {
+        display: inline-block;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+    }
+</style>

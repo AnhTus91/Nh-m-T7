@@ -1,0 +1,42 @@
+﻿@model CNPMNC_Giao.Models.KichCo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KichCo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SoKichCo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoKichCo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanPham.TenSanPham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanPham.TenSanPham)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaKichCo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
